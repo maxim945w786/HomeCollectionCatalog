@@ -1,0 +1,60 @@
+﻿<Window x:Class="HomeCollectionCatalog.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Вход в систему"
+        Height="460"
+        Width="430"
+        Background="{StaticResource PrimaryBackgroundBrush}"
+        FontFamily="Garamond">
+
+    <Grid>
+
+        <Border Width="340"
+                Padding="25"
+                Background="White"
+                CornerRadius="16"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+            <StackPanel>
+
+                <Image Source="logo.png"
+                       Width="90"
+                       Height="90"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,15"/>
+
+                <TextBlock Text="Вход в систему"
+                           Style="{StaticResource HeaderTextStyle}"
+                           Margin="0,0,0,20"/>
+
+                <TextBlock Text="Email"
+                           Style="{StaticResource LabelTextStyle}"/>
+
+                <TextBox x:Name="EmailTextBox"
+                         Style="{StaticResource InputTextBoxStyle}"/>
+
+                <TextBlock Text="Пароль"
+                           Style="{StaticResource LabelTextStyle}"/>
+
+                <PasswordBox x:Name="PasswordBox"
+                             Style="{StaticResource InputPasswordBoxStyle}"/>
+
+                <Button Content="Войти"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Click="LoginButton_Click"/>
+
+                <TextBlock Text="Нет аккаунта? Зарегистрироваться"
+                           Foreground="{StaticResource SecondaryAccentBrush}"
+                           FontSize="15"
+                           FontFamily="Garamond"
+                           HorizontalAlignment="Center"
+                           Margin="0,18,0,0"
+                           Cursor="Hand"
+                           MouseLeftButtonDown="RegisterLink_MouseLeftButtonDown"/>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
