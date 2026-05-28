@@ -71,6 +71,7 @@ CREATE TABLE CollectionItems (
     EstimatedValue DECIMAL(12,2) NOT NULL,
     IsInsured BIT NOT NULL DEFAULT 0,
     PhotoPath NVARCHAR(255),
+    Image VARBINARY(MAX) NULL,
     CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
     FOREIGN KEY (ItemTypeID) REFERENCES ItemTypes(ItemTypeID),
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID),
@@ -772,3 +773,9 @@ SELECT COUNT(*) AS CollectionItemsCount FROM CollectionItems;
 SELECT COUNT(*) AS CategoriesCount FROM Categories;
 SELECT COUNT(*) AS StorageLocationsCount FROM StorageLocations;
 SELECT COUNT(*) AS AcquisitionSourcesCount FROM AcquisitionSources;
+
+
+-- Практическая работа №15
+UPDATE CollectionItems
+SET Image = CAST('TEST_IMAGE_DATA' AS VARBINARY(MAX));
+GO
